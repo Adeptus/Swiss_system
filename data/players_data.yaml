@@ -1,0 +1,17 @@
+--- 
+- !ruby/object:Player 
+  name: k
+  points: 2
+  small_points: 0
+- !ruby/object:Player 
+  name: a
+  points: 0
+  small_points: 0
+- !ruby/object:Player 
+  name: s
+  points: 2
+  small_points: 0
+- !ruby/object:Player 
+  name: c
+  points: 1
+  small_points: 0
