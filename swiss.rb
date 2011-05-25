@@ -67,7 +67,7 @@ Shoes.app :title => "Swiss system", :width => 800, :height => 400, :resizable =>
 
   def preper_raund
     @raund = Round.new
-    paring = @raund.execute(@players, 1)
+    paring = @raund.paring_player(@players, 1)
     refresh_round(paring)
     load
   end
