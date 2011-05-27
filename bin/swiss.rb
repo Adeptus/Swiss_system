@@ -57,7 +57,7 @@ Shoes.app :title => "Swiss system", :width => 800, :height => 400, :resizable =>
   def add_player(item)
     return if item == ''
   
-    @players_list.add(Player.new(item))
+    @players_list.add(SwissSystem::Player.new(item))
 		@players_list.save_players_data
   
     load
@@ -71,7 +71,7 @@ Shoes.app :title => "Swiss system", :width => 800, :height => 400, :resizable =>
   end
 
   def preper_round(round_number)
-    @round = Round.new
+    @round = SwissSystem::Round.new
     paring = @round.paring_player(@players, round_number)
     refresh_round(paring)
     load
@@ -96,7 +96,7 @@ Shoes.app :title => "Swiss system", :width => 800, :height => 400, :resizable =>
   end
 
   def load
-    @players_list = PlayersList.new
+    @players_list = SwissSystem::PlayersList.new
 
     @players_list.load_players_data
     @players = @players_list.players

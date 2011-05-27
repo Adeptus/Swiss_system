@@ -29,14 +29,14 @@ module SwissSystem
 		end
 
 		def load_players_data(data_file = nil)
-			data_file = "./data/players_data.yaml" if data_file.nil?
+			data_file = "../data/players_data.yaml" if data_file.nil?
 
 		  @players = YAML.load_file(data_file)
 		  @players = [] if @players == false
 		end
 
-		def save_players_data(data_file = "./data/players_data.yaml")
-	#		data_file = "./data/players_data.yaml" if data_file.nil?
+		def save_players_data(data_file = "../data/players_data.yaml")
+	#		data_file = "../data/players_data.yaml" if data_file.nil?
 
 		  File.open(data_file, "w") {|file| YAML.dump(@players, file) }
 		end
