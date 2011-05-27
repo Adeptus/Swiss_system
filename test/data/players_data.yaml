@@ -1,21 +1,21 @@
 --- 
-- !ruby/object:Player 
+- !ruby/object:SwissSystem::Player 
   name: player1
   points: 2
   small_points: 0
-- !ruby/object:Player 
+- !ruby/object:SwissSystem::Player 
   name: player2
   points: 0
   small_points: 0
-- !ruby/object:Player 
+- !ruby/object:SwissSystem::Player 
   name: player3
   points: 2
   small_points: 0
-- !ruby/object:Player 
+- !ruby/object:SwissSystem::Player 
   name: player4
   points: 1
   small_points: 0
-- !ruby/object:Player 
+- !ruby/object:SwissSystem::Player 
   name: player5
   points: 1
   small_points: 0
