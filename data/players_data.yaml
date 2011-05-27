@@ -1,17 +1,21 @@
 --- 
 - !ruby/object:Player 
-  name: k
+  name: player1
   points: 2
   small_points: 0
 - !ruby/object:Player 
-  name: a
+  name: player2
   points: 0
   small_points: 0
 - !ruby/object:Player 
-  name: s
+  name: player3
   points: 2
   small_points: 0
 - !ruby/object:Player 
-  name: c
+  name: player4
+  points: 1
+  small_points: 0
+- !ruby/object:Player 
+  name: player5
   points: 1
   small_points: 0

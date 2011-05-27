@@ -26,7 +26,10 @@ Shoes.app :title => "Swiss system", :width => 800, :height => 400, :resizable =>
       end
   
       flow :margin_top => 1 do
-        button("Next Game", :margin_left => 5, :width => 300)  { preper_raund }
+        button("New Game", :margin_left => 5, :width => 300)  { preper_round("New") }
+      end
+      flow :margin_top => 1 do
+        button("Next Game", :margin_left => 5, :width => 300)  { preper_round("Next") }
       end
     end
     
@@ -65,9 +68,9 @@ Shoes.app :title => "Swiss system", :width => 800, :height => 400, :resizable =>
     load
   end
 
-  def preper_raund
-    @raund = Round.new
-    paring = @raund.paring_player(@players, 1)
+  def preper_round(round_number)
+    @round = Round.new
+    paring = @round.paring_player(@players, round_number)
     refresh_round(paring)
     load
   end
