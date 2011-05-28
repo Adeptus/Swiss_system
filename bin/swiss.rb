@@ -58,14 +58,14 @@ Shoes.app :title => "Swiss system", :width => 800, :height => 400, :resizable =>
     return if item == ''
   
     @players_list.add(SwissSystem::Player.new(item))
-		@players_list.save_players_data
+    @players_list.save_players_data
   
     load
   end
 
   def remove_player(player_name)
     @players_list.delete(player_name)
-		@players_list.save_players_data
+    @players_list.save_players_data
 
     load
   end
@@ -90,7 +90,7 @@ Shoes.app :title => "Swiss system", :width => 800, :height => 400, :resizable =>
     point1 = ask("Please, enter point #{player1_name}:")
     point2 = ask("Please, enter point #{player2_name}:")
     @players_list.add_result(player1_name, point1, player2_name, point2)
-		@players_list.save_players_data
+    @players_list.save_players_data
 
     load
   end

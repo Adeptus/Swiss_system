@@ -5,7 +5,7 @@ class TestRound < Test::Unit::TestCase
 
   def setup
     @round = SwissSystem::Round.new
-		@players = YAML.load_file("./test/data/players_data.yaml")
+    @players = YAML.load_file("./test/data/players_data.yaml")
   end
 
 
