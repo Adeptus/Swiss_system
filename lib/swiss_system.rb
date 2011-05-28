@@ -1,4 +1,4 @@
-require					 'yaml'
+require          'yaml'
 require          'fileutils'
 
 require_relative 'swiss_system/players_list'
