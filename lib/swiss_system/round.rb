@@ -17,9 +17,9 @@ module SwissSystem
     end
 
     def points_paring(players_array)
-      players_array.sort! {|player| player.points}
+      players_array.sort_by! {|player| player.points}
 
-      output_array, players_array = paring_players(players_array)
+      output_array, players_array = paring_players(players_array.reverse)
 
       unless players_array[0].nil?
         output_array << [players_array[0], Player.new("PAUSE!!")]
