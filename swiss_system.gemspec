@@ -1,9 +1,9 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "SwissSystem/version"
+require "swiss_system/version"
 
 Gem::Specification.new do |s|
-  s.name        = "SwissSystem"
+  s.name        = "swiss_system"
   s.version     = SwissSystem::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Mariusz Koziel"]
@@ -12,7 +12,8 @@ Gem::Specification.new do |s|
   s.summary     = %q{Swiss System Turnament}
   s.description = %q{Aplication to swiss system turnament}
 
-  s.rubyforge_project = "SwissSystem"
+  s.rubyforge_project = "swiss_system"
+  s.add_dependency      "shoes"
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
