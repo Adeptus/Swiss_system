@@ -1,7 +1,7 @@
 module SwissSystem
   class PlayersList
 
-    PLAYER_DATA_FILE = File.expand_path("../../data/players_data.yaml", __FILE__)
+    PLAYER_DATA_FILE = File.expand_path("../../../data/players_data.yaml", __FILE__)
 
     attr_accessor :players
 

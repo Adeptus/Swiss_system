@@ -3,7 +3,7 @@ module SwissSystem
 
     def paring_player(players_array, round)
       return shuffle_paring(players_array) if round == "New"
-      return points_paring(players_array)if round == "Next" 
+      points_paring(players_array)
     end
 
   private
@@ -11,15 +11,17 @@ module SwissSystem
     def shuffle_paring(players_array)
       output_array, players_array = paring_players(players_array.shuffle)
 
-      output_array << [players_array[0], Player.new("PAUSE!!")] unless players_array[0].nil?
+      unless players_array[0].nil?
+        output_array << [players_array[0], Player.new("PAUSE!!")]
+      end
       
       output_array
     end
 
     def points_paring(players_array)
-      players_array.sort_by! {|player| player.points}
+      players_array.sort! {|x, y| y.points <=> x.points}
 
-      output_array, players_array = paring_players(players_array.reverse)
+      output_array, players_array = paring_players(players_array)
 
       unless players_array[0].nil?
         output_array << [players_array[0], Player.new("PAUSE!!")]
