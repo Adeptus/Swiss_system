@@ -53,4 +53,14 @@ class PlayersListTest < Test::Unit::TestCase
   
     FileUtils.remove_file("./test/data/TEST.yaml")
   end
+  
+  def test_players_sort
+    @players_list.players[0] = SwissSystem::Player.new("Player1", 0)
+    @players_list.players[1] = SwissSystem::Player.new("Player2", 2)
+    @players_list.players[2] = SwissSystem::Player.new("Player3", 1)
+
+    @players_list.sort_players
+    assert_equal 2, @players_list.players[0].points
+  end
+  
 end

@@ -11,7 +11,7 @@ Shoes.app :title => "Swiss system", :width => 800, :height => 400, :resizable =>
   flow :margin => 0, :margin_top => 10 do
   
     stack :margin => 1, :margin_top => 11, :width => 300 do
-      para "Players list", :stroke => red, :fill => yellow
+      para "Players list/Ranking", :stroke => red, :fill => yellow
   
       stack :margin_left => 5, :margin_right => 10, :width => 300, :height => 200, :scroll => true do
         background white
@@ -99,6 +99,7 @@ Shoes.app :title => "Swiss system", :width => 800, :height => 400, :resizable =>
     @players_list = SwissSystem::PlayersList.new
 
     @players_list.load_players_data
+    @players_list.sort_players
     @players = @players_list.players
     
     refresh_gui_list

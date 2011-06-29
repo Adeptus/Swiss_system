@@ -39,5 +39,10 @@ module SwissSystem
     def save_players_data(data_file = PLAYER_DATA_FILE)
       File.open(data_file, "w") {|file| YAML.dump(@players, file) }
     end
+    
+    def sort_players
+      @players.sort! {|player1, player2| player2.points <=> player1.points}
+    end
+    
   end
 end
