@@ -63,4 +63,12 @@ class PlayersListTest < Test::Unit::TestCase
     assert_equal 2, @players_list.players[0].points
   end
   
+  def test_save_repetition_oponents
+    @players_list.load_players_data("./test/data/players_data.yaml")
+    
+    round = SwissSystem::Round.new
+    @players_list.save_oponents(round.paring_player(@players_list.players, "New"))
+    assert_not_equal [], @players_list.players[0].oponents
+  end
+
 end

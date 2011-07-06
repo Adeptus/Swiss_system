@@ -46,7 +46,7 @@ Shoes.app :title => "Swiss system", :width => 800, :height => 400, :resizable =>
   
   def refresh_gui_list
     @gui_player_list.replace *( 
-        @players.map do |player|
+        @players_list.players.map do |player|
          [ player.name, '    big points:' , player.points] + ['  '] +
           [ link('delete') { remove_player(player.name) } ] + 
           [ "\n" ]
@@ -72,7 +72,9 @@ Shoes.app :title => "Swiss system", :width => 800, :height => 400, :resizable =>
 
   def preper_round(round_number)
     @round = SwissSystem::Round.new
-    paring = @round.paring_player(@players, round_number)
+    paring = @round.paring_player(@players_list.players, round_number)
+    @players_list.save_oponents(paring)
+    @players_list.save_players_data
     refresh_round(paring)
     load
   end
@@ -100,8 +102,7 @@ Shoes.app :title => "Swiss system", :width => 800, :height => 400, :resizable =>
 
     @players_list.load_players_data
     @players_list.sort_players
-    @players = @players_list.players
-    
+
     refresh_gui_list
   end
   

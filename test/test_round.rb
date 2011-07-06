@@ -30,8 +30,13 @@ class TestRound < Test::Unit::TestCase
     assert_equal 2, paring_array[0][1].points #First par both have 2 points 
 
     assert_equal 1, paring_array[1][0].points #paring by point
+    assert_equal 0, paring_array[1][1].points #0 point because duplicate oponents
+  end
 
-    assert_equal 0, paring_array[2][0].points #paring by point
+  def test_check_repetition_oponents
+    paring_array = @round.paring_player(@players, "Next")
+    
+    assert_equal "player5", paring_array[1][1].name
   end
 
 end

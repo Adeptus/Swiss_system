@@ -1,21 +1,31 @@
 --- 
 - !ruby/object:SwissSystem::Player 
   name: player1
+  oponents: 
+  - PAUSE!!
   points: 2
   small_points: 0
 - !ruby/object:SwissSystem::Player 
   name: player2
-  points: 0
-  small_points: 0
-- !ruby/object:SwissSystem::Player 
-  name: player3
+  oponents: 
+  - player5
   points: 2
   small_points: 0
 - !ruby/object:SwissSystem::Player 
   name: player4
+  oponents: 
+  - player3
+  points: 1
+  small_points: 0
+- !ruby/object:SwissSystem::Player 
+  name: player3
+  oponents: 
+  - player4
   points: 1
   small_points: 0
 - !ruby/object:SwissSystem::Player 
   name: player5
-  points: 1
+  oponents: 
+  - player2
+  points: 0
   small_points: 0

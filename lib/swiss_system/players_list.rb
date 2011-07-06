@@ -44,5 +44,16 @@ module SwissSystem
       @players.sort! {|player1, player2| player2.points <=> player1.points}
     end
     
+    def save_oponents(paring)
+        @players = []
+      paring.each do |par|
+        par[0].oponents << par[1].name
+        par[1].oponents << par[0].name
+        
+        @players << par[0]
+        @players << par[1] unless par[1].name == "PAUSE!!"
+      end
+    end
+    
   end
 end
