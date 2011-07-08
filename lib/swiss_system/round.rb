@@ -6,7 +6,7 @@ module SwissSystem
       points_paring(players_array)
     end
 
-  private
+private
 
     def shuffle_paring(players_array)
       players_array = remove_oponents(players_array.shuffle)
@@ -27,12 +27,15 @@ module SwissSystem
     end
     
     def check_repetition(players_array, output_array)
-      index = players_array.index do |player|
-        !player.oponents.include?(players_array[0].name) and 
-        player.name != players_array[0].name
+      pars_combination = players_array.combination(2).to_a.find_all {|par|
+                                       !par[0].oponents.include?(par[1].name)
+                                       }
+      if pars_combination.empty?
+        output_array << players_array.slice!(0,2)
+      else
+        output_array << pars_combination[0]
+        pars_combination[0].each {|player| players_array.delete(player)}
       end
-      players_array[1], players_array[index] = players_array[index], players_array[1]
-      output_array << players_array.slice!(0,2)
       return players_array, output_array
     end
     

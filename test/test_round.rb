@@ -37,6 +37,13 @@ class TestRound < Test::Unit::TestCase
     paring_array = @round.paring_player(@players, "Next")
     
     assert_equal "player5", paring_array[1][1].name
+    assert_equal "player4", paring_array[2][0].name
   end
 
+  def test_check_repetition_pause
+    paring_array = @round.paring_player(@players, "Next")
+
+    assert_equal "player5", paring_array[1][1].name
+  end
+  
 end
